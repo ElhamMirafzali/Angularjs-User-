@@ -5,8 +5,9 @@ done :
 - Edit user name is done.
 - Delete user is done.
 - Add new user is done.
+- slider for user list is added (but it has still problem to refresh in adding ang deleting a user)
 
 todo :
-- improve ui : user list - add pupon for AddUser and EditUser					
+- improve ui : fix slider problem - add pupon for AddUser and EditUser	- add navbar				
 - upload
 		

@@ -1,0 +1,41 @@
+body{
+    background: url("/img/bg.png") no-repeat;
+}
+.body-context{
+    background: lightskyblue;
+}
+* {
+    box-sizing: border-box;
+}
+
+.slider {
+    width: 60%;
+    margin-top: 20%  ;
+    margin-left: 20%;
+}
+
+.slick-slide {
+    margin: 0px 20px;
+    height: 35% !important;
+}
+
+.slick-slide img {
+    width: 100%;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: black;
+}
+.slide-divs > img{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+}
+.slide-divs {
+   text-align: center;
+    color: white;
+}
+.slide-divs > span > a {
+    color: white;
+}
