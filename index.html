@@ -1,0 +1,77 @@
+<html ng-app="UsersApp">
+<head>
+    <title>UserList</title>
+
+    <script type="text/javascript" src="js/lib/angular.min.js"></script>
+
+    <script type="text/javascript" src="js/lib/ui-bootstrap-tpls-2.5.0.js"></script>
+    <script type="text/javascript" src="js/lib/ui-bootstrap.js"></script>
+    <script type="text/javascript" src="js/lib/angular-ui-bootstrap-modal.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap-tpls.min.js"></script>-->
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/lib/ng-file-upload-shim.min.js"></script>
+    <!-- for no html5 browsers support -->
+    <script type="text/javascript" src="js/lib/ng-file-upload.min.js"></script>
+    <script type="text/javascript" src="js/lib/ng-file-upload-all.min.js"></script>
+    <script type="text/javascript" src="js/lib/angular-animate.js"></script>
+
+    <script type="text/javascript" src="js/ng-file-upload.js"></script>
+
+    <!--<script type="text/javascript" src="js/lib/angular-ui-bootstrap-modal.js"></script>-->
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container" ng-controller="UsersAppCntrl">
+
+    <button type="button" class="btn" ng-click="open()">Open Modal</button>
+
+    <div modal="showModal" close="cancel()">
+        <div class="modal-header">
+            <h4>Modal Dialog</h4>
+        </div>
+        <div class="modal-body">
+            <p>Example paragraph with some text.</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-success" ng-click="ok()">Okay</button>
+            <button class="btn" ng-click="cancel()">Cancel</button>
+        </div>
+    </div>
+
+
+    <div class="span5">
+        <div class="row">
+
+            <h2>List of Users
+                <button type="button" class="btn btn-default" ng-click="enableAdding()">AddUser</button>
+            </h2>
+
+        </div>
+        <div class="row" style="height: 80%;overflow-y: auto; direction: rtl">
+            <div style="direction: ltr">
+                <ul ng-repeat="user in users">
+                    <img ng-src="{{user.image}}" alt="{{user.name}} Image  "
+                         style=" height: 100px; width: 100px"/>
+                    <li>ID :{{user.id}}</li>
+                    <li>NAME : {{user.name}}<a href="" ng-click="editUser(user.id); setUser(user.id)"> Edit</a>
+                        <a href="" ng-click="deleteUser(user.id)"> - Delete</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <br><br>
+    <div class="pull-right span5" style="padding-top: 8%">
+        <div class="" ng-include src="addFormUrl"></div>
+        <div class="" ng-include src="editFormUrl"></div>
+    </div>
+</div>
+
+</body>
+</html>

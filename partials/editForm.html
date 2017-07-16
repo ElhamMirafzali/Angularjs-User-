@@ -1,0 +1,10 @@
+<div ng-show="editing">
+	<h3>Edit User</h3>
+	<h4><p ng-show="currentUser">Current User : {{currentUser.name}}</p>
+	</h4>
+	<img ng-src="{{editing.image}}" alt="{{editing.name}} Image  "
+		 style=" height: 100px; width: 100px"/>
+
+	<br><br>
+	<input ng-model="editing.name" value="" class="input-xlarge" />
+</div>
