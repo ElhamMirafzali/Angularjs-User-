@@ -1,5 +1,6 @@
 "# Angularjs-UserList-Project"
-stage 1 : 
+
+phase 1 : 
 		done :
 			- User list is created with name, id, profile image.
 			- Edit user name is done.
