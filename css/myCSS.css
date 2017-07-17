@@ -1,22 +1,40 @@
-body{
-    background: url("/img/bg.png") no-repeat;
-}
 .body-context{
-    background: lightskyblue;
+    background: #dbd8e0;
+    height: 100%;
+}
+.body-context > nav {
+    background-color: lightseagreen !important;
+}
+
+.body-context > nav > div >a {
+    color: white;
+}
+
+.slide-divs{
+    background: lightseagreen;
+}
+.img-wrapper{
+    width: 80%;
+    margin-top: 10%;
+    margin-left: 10%;
+
 }
 * {
     box-sizing: border-box;
 }
 
 .slider {
-    width: 60%;
-    margin-top: 20%  ;
-    margin-left: 20%;
+    width: 70%;
+
+    margin-left: 15%;
+}
+.slider-row{
+    margin-top: 18% ;
 }
 
 .slick-slide {
     margin: 0px 20px;
-    height: 35% !important;
+    height: 40% !important;
 }
 
 .slick-slide img {
@@ -38,4 +56,8 @@ body{
 }
 .slide-divs > span > a {
     color: white;
+}
+
+.add-user-btn{
+    margin-top: 0.5%;
 }
