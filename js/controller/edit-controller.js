@@ -3,11 +3,14 @@
  */
 
 app.controller('EditCntrl', ['$scope','$uibModal',function ($scope, $uibModal) {
+    $scope.username = 'hello';
+
     $scope.open = function () {
         var modalInstance = $uibModal.open({
-            // controller: 'UsersAppCntrl',
+            scope: $scope,
             controller: 'PopupCont',
-            templateUrl: 'partials/editForm.html'
+            templateUrl: 'partials/editForm.html',
+
         });
     }
 }]);
@@ -16,13 +19,5 @@ app.controller('PopupCont', ['$scope','$uibModalInstance', '$rootScope', functio
     $scope.close = function () {
         $uibModalInstance.dismiss('cancel');
     };
-    $scope.newName;
-    $scope.newImage;
 
-    $scope.childmethod = function() {
-        $rootScope.$emit('parent-method', {
-            newName : $scope.newName
-            // newImage : $scope.newImage
-        });
-    }
 }]);

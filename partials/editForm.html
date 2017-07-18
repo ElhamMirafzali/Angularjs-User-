@@ -6,8 +6,8 @@
 	</div>
 
 	<div class="modal-body">
-		<h4><p ng-show="currentUser">Current User : {{currentUser.name}}</p>
-		</h4>
+		<!--<h4><p ng-show="currentUser">Current User : {{currentUser.name}}</p></h4>-->
+		<h4>Current User : {{currentUser.name}}</p></h4>
 		<img ng-src="{{editing.image}}" alt="{{editing.name}} Image  "
 			 style=" height: 100px; width: 100px"/>
 
@@ -15,7 +15,7 @@
 		<input ng-model="editing.name" value="" class="input-xlarge" />
 	</div>
 
-	<div class="modal-footer" >
+	<div class="modal-footer">
 		<button class="btn btn-warning" type="button" ng-click="close()">Close</button>
 	</div>
 

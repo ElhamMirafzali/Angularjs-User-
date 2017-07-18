@@ -42,8 +42,8 @@ app.controller('UsersAppCntrl',  function ($scope) {
         }
     ];
 
-    $scope.addFormUrl = 'partials/add-user-form.html';
-    $scope.editFormUrl = 'partials/editForm.html';
+    // $scope.addFormUrl = 'partials/add-user-form.html';
+    // $scope.editFormUrl = 'partials/editForm.html';
     $scope.currentUser = null;
     $scope.editing = null;
     $scope.adding = null;
@@ -52,16 +52,18 @@ app.controller('UsersAppCntrl',  function ($scope) {
     $scope.form = [];
     $scope.files = [];
 
-
-
     $scope.setUser = function (id) {
+        console.log("id is"+ id);
         for (var i = 0; i < $scope.users.length; i++) {
             var obj = $scope.users[i];
             if (obj.id == id) {
+                console.log("inside if");
                 $scope.currentUser = $scope.users[i];
                 i = $scope.users.length;
             }
+
         }
+        console.log($scope.currentUser.name);
     };
 
     $scope.editUser = function (id) {

@@ -1,5 +1,7 @@
 "# Angularjs-UserList-Project"
+
 stage 1 : 
+
 done :
 - User list is created with name, id, profile image.
 - Edit user name is done.
@@ -9,8 +11,10 @@ done :
 - I added all dependencies and packages again with BOWER to solve version problems
 - I added popup for Edit and Add-User (but still the connection between controllers(popup and main controller) has problem!)
 - a simple navbar is added.
+- connection between controllers is fixed.
+
 todo :
-- fix connection between controllers problem!
-- fix slide show!
-- upload
+
+- change the ui for user lists
+- upload profile image
 		

@@ -14,12 +14,10 @@
     <script  src="bower_components/ng-file-upload/ng-file-upload-all.min.js"></script>
     <script  src="bower_components/ng-file-upload/ng-file-upload-shim.min.js"></script>
 
-
     <script  type="text/javascript" src="js/app.js"></script>
-    <script  type="text/javascript" src="js/controller/appController.js"></script>
-    <script  type="text/javascript" src="js/controller/popup-controller.js"></script>
-    <script  type="text/javascript" src="js/controller/editController.js"></script>
-
+    <script  type="text/javascript" src="js/controller/app-controller.js"></script>
+    <script  type="text/javascript" src="js/controller/add-controller.js"></script>
+    <script  type="text/javascript" src="js/controller/edit-controller.js"></script>
 
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
@@ -31,15 +29,14 @@
 <body>
 
 
-<div class="container body-context" ng-controller="UsersAppCntrl">
+<div class="container body-context" ng-controller="UsersAppCntrl as main">
 
     <nav class="navbar navbar-inverse bg-inverse">
-        <div class="container" ng-controller="PopupDemoCont">
+        <div class="container" ng-controller="AddCntrl">
                 <button ng-click="open()" class="btn btn-warning add-user-btn">Add User</button>
             <!--<a href=""  ng-click="enableAdding()">AddUser</a>-->
         </div>
     </nav>
-
 
 
     <!--<div class="row slider-row">-->
@@ -74,7 +71,8 @@
                 <li>ID :{{user.id}}</li>
                 <li>NAME : {{user.name}}
                     <!--<a ng-controller="PopupDemoCont" href="" ng-click="editUser(user.id); setUser(user.id)"> Edit</a>-->
-                    <a ng-controller="EditCntrl" href="" ng-click="open(); editUser(user.id); setUser(user.id)"> Edit</a>
+                    <a ng-controller="EditCntrl" href="" ng-click=" editUser(user.id); setUser(user.id) ; open()"> Edit</a>
+
                     <a href="" ng-click="deleteUser(user.id)"> - Delete</a></li>
             </ul>
         </div>
