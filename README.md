@@ -12,9 +12,10 @@ done :
 - I added popup for Edit and Add-User (but still the connection between controllers(popup and main controller) has problem!)
 - a simple navbar is added.
 - connection between controllers is fixed.
+- user list ui is changed(I deleted the slider)
 
 todo :
 
-- change the ui for user lists
 - upload profile image
+- ui colors and backgrounds.
 		

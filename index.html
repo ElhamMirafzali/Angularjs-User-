@@ -22,69 +22,34 @@
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
     <link rel="stylesheet" type="text/css" href="css/myCSS.css">
-    <link rel="stylesheet" type="text/css" href="./slick/slick.css">
-    <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">
 
 </head>
 <body>
 
-
-<div class="container body-context" ng-controller="UsersAppCntrl as main">
+<div class="container" ng-controller="UsersAppCntrl as main">
 
     <nav class="navbar navbar-inverse bg-inverse">
         <div class="container" ng-controller="AddCntrl">
-                <button ng-click="open()" class="btn btn-warning add-user-btn">Add User</button>
-            <!--<a href=""  ng-click="enableAdding()">AddUser</a>-->
+            <button ng-click="open()" class="btn btn-warning add-user-btn">Add User</button>
         </div>
     </nav>
+    <div class="container-fluid  body-context">
+        <div class="row">
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 feature" ng-repeat="user in users">
+                <div class="feature__stuff">
+                    <img ng-src="{{user.image}}" alt="{{user.name}} Image  "
+                         style=" height: 100px; width: 100px"/>
+                    <h2>{{user.name}}</h2>
+                    <div class="feature__detail">
+                        <button ng-controller="EditCntrl" class="btn btn-warning" ng-click=" editUser(user.id); setUser(user.id) ; open()"> Edit</button>
 
-
-    <!--<div class="row slider-row">-->
-        <!--<section class="center slider" >-->
-            <!--<div class="slide-divs"  ng-repeat="user in users" style="border: 1px solid black">-->
-                <!--<div class="img-wrapper">-->
-                    <!--<img ng-src="{{user.image}}" alt="{{user.name}} Image  "-->
-                         <!--style=" height: 60%; width: 100%"/>-->
-                <!--</div>-->
-                <!--<div>-->
-                    <!--<span>ID :{{user.id}}</span>-->
-                    <!--<br>-->
-                    <!--<span> {{user.name}}<a href="" ng-click="editUser(user.id); setUser(user.id)">-->
-                <!--<br>Edit</a>-->
-                <!--<a href="" ng-click="deleteUser(user.id)"> - Delete</a></span>-->
-                <!--</div>-->
-
-            <!--</div>-->
-
-        <!--</section>-->
-
-    <!--</div>-->
-
-    <!--<script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>-->
-    <!--<script type="text/javascript" src="js/slider.js"></script>-->
-
-    <div class="row" style="height: 80%;overflow-y: auto; direction: rtl">
-        <div style="direction: ltr">
-            <ul ng-repeat="user in users">
-                <img ng-src="{{user.image}}" alt="{{user.name}} Image  "
-                     style=" height: 100px; width: 100px"/>
-                <li>ID :{{user.id}}</li>
-                <li>NAME : {{user.name}}
-                    <!--<a ng-controller="PopupDemoCont" href="" ng-click="editUser(user.id); setUser(user.id)"> Edit</a>-->
-                    <a ng-controller="EditCntrl" href="" ng-click=" editUser(user.id); setUser(user.id) ; open()"> Edit</a>
-
-                    <a href="" ng-click="deleteUser(user.id)"> - Delete</a></li>
-            </ul>
+                        <button class="btn btn-warning" ng-click="deleteUser(user.id)">Delete</button></button>
+                    </div>
+                </div>
+            </div>
         </div>
-
     </div>
-
-
-    <!--<div class="pull-right span5" style="padding-top: 8%">-->
-        <!--<div class="" ng-include src="addFormUrl"></div>-->
-        <!--<div class="" ng-include src="editFormUrl"></div>-->
-    <!--</div>-->
-
+    
 </div>
 
 </body>
