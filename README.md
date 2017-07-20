@@ -13,9 +13,7 @@ done :
 - a simple navbar is added.
 - connection between controllers is fixed.
 - user list ui is changed(I deleted the slider)
+- upload image is done with nodejs(the uploaded image is saves in img folder)	
+- I changed the Architecture of the program and added "factory" for app to share variables between controllers.
 
-todo :
-
-- upload profile image
-- ui colors and backgrounds.
-		
+stage 2 :

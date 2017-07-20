@@ -1,0 +1,137 @@
+body {
+  position: relative;
+  /*font-family: 'Raleway', sans-serif;*/
+  font-family: roboto;
+  font-weight: 300;
+}
+.add-user-btn{
+  margin-top: 0.5%;
+}
+
+h2 {
+  font-weight: 300;
+  border-bottom: 2px solid #5e5e5e;
+  padding-bottom: .5em;
+  font-size: 20px !important;
+}
+
+.list {
+  position: relative;
+  /*max-width: 290px;*/
+  height: 250px;
+  text-align: center;
+  background-color: white;
+  color: white;
+  padding: 2em;
+
+}
+
+
+.list__stuff {
+  border-radius: 5%;
+  background-color: #303030;
+  border: 0.5px solid black;
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+  right: 1em;
+  padding-top: 2em;
+  padding-bottom: 1em;
+
+}
+
+.list__detail {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .5s ease-out;
+}
+
+.list:hover .list__detail {
+  max-height: 250px;
+  transition: max-height .5s ease-in;
+}
+.modal-body{
+  text-align: center !important;
+}
+
+.btn:focus, .upload-btn:focus{
+  outline: 0 !important;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+
+.upload-btn {
+  color: #ffffff;
+  background-color: #F89406;
+  border: none;
+}
+
+.upload-btn:hover,
+.upload-btn:focus,
+.upload-btn:active,
+.upload-btn.active {
+  color: #ffffff;
+  background-color: #FA8900;
+  border: none;
+}
+
+h4 {
+  padding-bottom: 30px;
+  color: #5e5e5e;
+}
+
+.glyphicon {
+  font-size: 5em;
+  color:  #5e5e5e;
+}
+
+h2 {
+  /*margin-top: 15px;*/
+  color:  #dbd8e0;
+}
+
+.panel {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#upload-input {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .main-container {
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  /*.container {*/
+    /*width: 450px;*/
+  /*}*/
+}
+
+/*----------------*/
+.file {
+  text-align: center !important;
+  position: relative;
+
+}
+.file > input[type="file"] {
+  position: absolute;
+  opacity: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
+}
+.file > input {
+  position: absolute;
+  /*top: 0; right: 0; left: 0; bottom: 0;*/
+  background-color: #F89406;
+  color: #ffffff;
+  /*line-height: 30px;*/
+  text-align: center;
+  cursor: pointer;
+}

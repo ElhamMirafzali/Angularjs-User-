@@ -1,0 +1,24 @@
+{
+  "name": "angular-lazy.loader",
+  "description": "Makes it possible to lazy load angular controllers, decorators and services etc. It works perfectly with ngRoute, ui.router and ui.bootstrap",
+  "main": "dist/index.js",
+  "authors": [
+    "Jesper Lindstrøm Nielsen <me@jstroem.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "lazy",
+    "loading",
+    "router"
+  ],
+  "homepage": "https://github.com/jstroem/lazy.loader",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
