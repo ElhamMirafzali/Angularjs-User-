@@ -3,12 +3,55 @@ var app = express();
 var path = require('path');
 var formidable = require('formidable');
 var fs = require('fs');
+var middleware = require('middleware');
+var cors = require('cors');
+var router = express.Router();
+//var stack = middleware();
 
+var options = {
+    dotfiles: 'ignore',
+    etag: false,
+    extensions: ['htm', 'html'],
+    setHeaders: function (res, path, stat) {
+        res.set('x-timestamp', Date.now());
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE');
+        // res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, API_USER,API_TOKEN");
+        res.header("Access-Control-Allow-Headers",'Content-Type');
+    }
+};
+
+
+app.use(cors({origin: 'http://localhost:3000'}));
+
+app.use(express.static('public', options));
 app.use(express.static(path.join(__dirname, 'public')));
+
+router.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE');
+    // res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, API_USER,API_TOKEN");
+    res.header("Access-Control-Allow-Headers",'Content-Type');
+    next();
+});
+
+// $scope.user = UserAuthService.getUser();
+//
+// authService.loginConfirmed($scope.user, function(config){
+//     config.headers["API_USER"] = $scope.user.guid;
+//     config.headers['API_TOKEN'] = $scope.user.api_token;
+//     return config;
+// });
+
+
 
 app.get('/', function(req, res){
     res.sendFile(path.join(__dirname, '/public/partials/add-user-form.html'));
+
 });
+
+
+
 
 app.post('/upload', function(req, res){
 
@@ -41,6 +84,9 @@ app.post('/upload', function(req, res){
   form.parse(req);
 
 });
+
+
+
 
 var server = app.listen(3000, function(){
   console.log('Server listening on port 3000');

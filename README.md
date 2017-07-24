@@ -17,3 +17,13 @@ done :
 - I changed the Architecture of the program and added "factory" for app to share variables between controllers.
 
 stage 2 :
+
+done :
+-GET
+-Delete
+-POST
+-PUT
+
+todo :
+-there is a problem with images in POST and PUT 
+
