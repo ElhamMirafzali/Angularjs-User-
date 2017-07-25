@@ -19,6 +19,7 @@ done :
 stage 2 :
 
 done :
+
 -GET
 -Delete
 -POST (I store localhost url for images in server)
@@ -27,9 +28,11 @@ done :
 stage 3 :
 
 done : 
+
 -authentication with Token is added.
 
 stage 4 :
 
 todo :
+
 -install Grunt and run and compress files with it.
