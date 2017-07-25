@@ -9,15 +9,19 @@
 		<div class="modal-body edit-body">
 
 			<h4>Current User : {{currentUser.username}}</p></h4>
-			<img class="edit-img"  ng-src="{{!image_source ? editing.avatar : image_source}}"
+			<img class="edit-img"  ng-src="{{editing.avatar}}"
 				 alt="{{editing.username}} Image  "
 				 style=" height: 100px; width: 100px; border-radius: 5%"/>
+			<!--<img class="edit-img"  ng-src="{{!image_source ? editing.avatar : image_source}}"-->
+				 <!--alt="{{editing.username}} Image  "-->
+				 <!--style=" height: 100px; width: 100px; border-radius: 5%"/>-->
 			<br><br>
-			<div class="file">
-				<label  class="btn btn-lg upload-btn"  for="addfile-input">Change Image</label>
-				<input id="addfile-input" ng-model="form.image" type="file"
-					   accept="image/*" onchange="angular.element(this).scope().uploadedFile(this)" />
-			</div>
+			<!-- ----------This is for changing avatar but PUT method does not include this.------- -->
+			<!--<div class="file">-->
+				<!--<label  class="btn btn-lg upload-btn"  for="addfile-input">Change Image</label>-->
+				<!--<input id="addfile-input" ng-model="form.image" type="file"-->
+					   <!--accept="image/*" onchange="angular.element(this).scope().uploadedFile(this)" />-->
+			<!--</div>-->
 			<br>
 			<input ng-model="editing.username" value="" class="input-xlarge" />
 			<br>
@@ -26,7 +30,7 @@
 
 		<div class="modal-footer">
 			<button class="btn btn-warning" type="submit" ng-click="editUserImage(image_source)">Edit</button>
-			<button class="btn btn-warning" type="button" ng-click="editUserImage(image_source);close();">Close</button>
+			<button class="btn btn-warning" type="button" ng-click="editUserImage(image_source);close()">Close</button>
 		</div>
 	</form>
 </body>

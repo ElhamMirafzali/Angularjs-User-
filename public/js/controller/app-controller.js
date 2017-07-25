@@ -24,6 +24,21 @@ app.controller('UsersAppCntrl',  function ($scope, sharedProperties, $http) {
         $scope.users = response.data.message;
     });
 
+    $http({
+        method : "GET",
+        url : "http://testapi.ariogames.ir:8888/user/token",
+        header : [
+
+        ],
+        body : {}
+    }).then(function(response) {
+        $scope.content = response.data;
+        $scope.statuscode = response.status;
+        $scope.statustext = response.statustext;
+        $scope.token = response.data.message.token;
+        console.log($scope.token);
+    });
+
     $scope.getList = function () {
         $http({
             method : "GET",
@@ -60,7 +75,8 @@ app.controller('UsersAppCntrl',  function ($scope, sharedProperties, $http) {
             method: 'PUT',
             url: 'http://testapi.ariogames.ir:8888/user/',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization' : 'Token '+ $scope.token
             },
             data: {
                 "id" : id,
@@ -87,7 +103,8 @@ app.controller('UsersAppCntrl',  function ($scope, sharedProperties, $http) {
             method: 'DELETE',
             url: 'http://testapi.ariogames.ir:8888/user/',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization' : 'Token '+ $scope.token
             },
             data: { "id": id }
         };
@@ -113,18 +130,19 @@ app.controller('UsersAppCntrl',  function ($scope, sharedProperties, $http) {
 
     $scope.addUser = function (newName,NewImage) {
 
+        console.log(NewImage);
         if (newName != null) {
 
             var postREQ = {
                 method: 'POST',
                 url: 'http://testapi.ariogames.ir:8888/user/',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Authorization' : 'Token '+ $scope.token
                 },
                 data: {
                     "username" : newName,
-                    "avatar" : ''
-                    // avatar: 'img/'+ NewImage
+                    "avatar" : "img/"+NewImage
                 }
             };
             $http(postREQ).then(function(response){

@@ -21,9 +21,15 @@ stage 2 :
 done :
 -GET
 -Delete
--POST
--PUT
+-POST (I store localhost url for images in server)
+-PUT (PUT method does not change avatar due to api doc.)
+
+stage 3 :
+
+done : 
+-authentication with Token is added.
+
+stage 4 :
 
 todo :
--there is a problem with images in POST and PUT 
-
+-install Grunt and run and compress files with it.
