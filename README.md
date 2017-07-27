@@ -1,5 +1,6 @@
 "# Angularjs-UserList-Project"
 
+(The size of "node-module" folder is too large.You can skip download it and create it by "npm-install".)
 stage 1 : 
 
 done :
