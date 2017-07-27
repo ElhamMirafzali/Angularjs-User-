@@ -30,9 +30,12 @@ stage 3 :
 done : 
 
 -authentication with Token is added.
+-(simple popup is added instead of alerts).
 
 stage 4 :
 
-todo :
+done :
 
--install Grunt and run and compress files with it.
+-install Grunt and run and compress css files and 
+js files(jquery,bootstrap,ui-bootstrap,ui-bootstrap-tpls,ajax) with it
+so I removed these library files from "bower_components" folder to reduce size.

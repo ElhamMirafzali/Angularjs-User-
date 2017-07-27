@@ -2,6 +2,7 @@
 app.controller('PopupCont', ['$scope','$uibModalInstance',  function ($scope, $uibModalInstance) {
 
 
+
     $scope.close = function () {
         $uibModalInstance.dismiss('cancel');
         $scope.editing = null;
@@ -75,5 +76,9 @@ app.controller('PopupCont', ['$scope','$uibModalInstance',  function ($scope, $u
 
     };
 
+    $scope.colsePopup = function () {
+        $('#excessPop2').slideUp(500) ;
+        $('#blackBG2').hide(500) ;
+    }
 
 }]);

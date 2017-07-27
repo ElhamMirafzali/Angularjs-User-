@@ -9,12 +9,12 @@ app.controller('UsersAppCntrl',  function ($scope, sharedProperties, $http) {
     $scope.currentUser = sharedProperties.currentUser;
     $scope.editing = sharedProperties.editing;
 
+
+
     $http({
         method : "GET",
         url : "http://testapi.ariogames.ir:8888/user/",
-        header : [
-
-        ],
+        header : [],
         body : {}
     }).then(function(response) {
         $scope.content = response.data;
@@ -27,31 +27,25 @@ app.controller('UsersAppCntrl',  function ($scope, sharedProperties, $http) {
     $http({
         method : "GET",
         url : "http://testapi.ariogames.ir:8888/user/token",
-        header : [
-
-        ],
+        header : [],
         body : {}
     }).then(function(response) {
         $scope.content = response.data;
         $scope.statuscode = response.status;
         $scope.statustext = response.statustext;
         $scope.token = response.data.message.token;
-        console.log($scope.token);
     });
 
     $scope.getList = function () {
         $http({
             method : "GET",
             url : "http://testapi.ariogames.ir:8888/user/",
-            header : [
-
-            ],
+            header : [],
             body : {}
         }).then(function(response) {
             $scope.content = response.data;
             $scope.statuscode = response.status;
             $scope.statustext = response.statustext;
-            console.log(response.data.message);
             $scope.users = response.data.message;
         });
     };
@@ -84,10 +78,10 @@ app.controller('UsersAppCntrl',  function ($scope, sharedProperties, $http) {
             }
         };
         $http(putREQ).then(function(response){
-            alert("success");
+            $scope.alertFunc('Edit is done!');
             $scope.getList();
         }, function(rejectReason){
-            alert("fail");
+            $scope.alertFunc('Request Failed! : '+rejectReason.data.message)
         });
 
     };
@@ -98,7 +92,7 @@ app.controller('UsersAppCntrl',  function ($scope, sharedProperties, $http) {
     };
 
     $scope.deleteUser = function (id) {
-
+        $scope.alertFunc();
         var delREQ = {
             method: 'DELETE',
             url: 'http://testapi.ariogames.ir:8888/user/',
@@ -109,13 +103,11 @@ app.controller('UsersAppCntrl',  function ($scope, sharedProperties, $http) {
             data: { "id": id }
         };
         $http(delREQ).then(function(response){
-            alert("success");
+            $scope.alertFunc('User is deleted!');
             $scope.getList();
             $scope.users = response.data.message;
-            console.log($scope.users);
-
             }, function(rejectReason){
-            alert("fail");
+            $scope.alertFunc('Request Failed! : '+rejectReason.data.message)
         });
 
         // for (var i = 0; i < $scope.users.length; i++) {
@@ -146,25 +138,44 @@ app.controller('UsersAppCntrl',  function ($scope, sharedProperties, $http) {
                 }
             };
             $http(postREQ).then(function(response){
-                alert("success");
+                $scope.alertInModal(newName + " is Added!");
                 $scope.getList();
                 $scope.users = response.data.message;
-                console.log($scope.users);
 
             }, function(rejectReason){
-                alert("fail");
+                $scope.alertInModal('Request Failed! : '+rejectReason.data.message)
             });
-
-            window.alert(newName + " is Added!");
-
         } else {
-            window.alert("Please Enter User Name!");
+            $scope.alertInModal("Please Enter User Name!");
         }
-
         $scope.newName = null;
 
-
     };
+
+    $scope.alertFunc = function (inputText) {
+        var ptag = 2;
+        if (ptag == 2) {
+            $('#excessPop').slideDown(500);
+            $('#blackBG').show(500);
+            var div = document.getElementById('excessmsg');
+            div.textContent = inputText;
+            ptag = 0;
+        }
+    };
+    $scope.alertInModal = function (inputText) {
+        var ptag = 2;
+        if (ptag == 2) {
+            $('#excessPop2').slideDown(500);
+            $('#blackBG2').show(500);
+            var div = document.getElementById('excessmsg2');
+            div.textContent = inputText;
+            ptag = 0;
+        }
+    };
+    $('#submitExcess').click(function() {
+        $('#excessPop').slideUp(500) ;
+        $('#blackBG').hide(500) ;
+    });
 
 });
 

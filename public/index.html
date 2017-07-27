@@ -3,16 +3,13 @@
     <title>UserList</title>
     <meta charset="UTF-8">
     <script  src="bower_components/angular/angular.js"></script>
-    <script  src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script  src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script  src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
-    <script  src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
-    <script  src="bower_components/angular-animate/angular-animate.min.js"></script>
-    <script  src="bower_components/ajax/dist/ajax.min.js"></script>
-    <script  src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
-    <script  src="bower_components/ng-file-upload/ng-file-upload-all.min.js"></script>
-    <script  src="bower_components/ng-file-upload/ng-file-upload-shim.min.js"></script>
-    <script  src="bower_components/angular-http-auth/dist/http-auth-interceptor.min.js"></script>
+    <!--<script  src="bower_components/jquery/dist/jquery.min.js"></script>-->
+    <!--<script  src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
+    <!--<script  src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>-->
+    <!--<script  src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>-->
+    <!--<script  src="bower_components/ajax/dist/ajax.min.js"></script>-->
+
+    <script src="js/build/js-build.min.js"></script>
 
     <script  type="text/javascript" src="js/app.js"></script>
     <script  type="text/javascript" src="js/service/shared-properties.js"></script>
@@ -21,16 +18,16 @@
     <script  type="text/javascript" src="js/controller/edit-controller.js"></script>
     <script  type="text/javascript" src="js/controller/popup-controller.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/build/css-build.min.js">
 
+    <!--<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">-->
+    <!--<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">-->
+    <!--<link rel="stylesheet" type="text/css" href="css/styles.css">-->
 
 </head>
 <body >
 
 <div class="container" ng-controller="UsersAppCntrl as main">
-
     <nav class="navbar navbar-inverse bg-inverse">
         <div class="container" ng-controller="AddCntrl">
 
@@ -53,8 +50,11 @@
             </div>
         </div>
     </div>
-    
 </div>
-
+<div id="blackBG"></div>
+<div id="excessPop">
+    <span id="excessmsg"></span><br/>
+    <button id="submitExcess">ok</button>
+</div>
 </body>
 </html>
